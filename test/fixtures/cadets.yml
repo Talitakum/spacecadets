@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  password: MyString
+  name: MyString
+  surname: MyString
+  street: MyString
+  city: MyString
+  country: MyString
+  institution: MyString
+  tshirtsize: 9.99
+  formalshirtsize: 9.99
+  waistsize: 9.99
+  shoesize: 9.99
+  hipsize: 9.99
+  suitjacketsize: 9.99
+  dresssize: 9.99
+  gender: MyString
+  age: 1
+  language: MyString
+  eyecolour: MyString
+  race: MyString
+  height: 9.99
+  weight: 9.99
+  haircolour: MyString
+  weekdays: MyString
+  weekends: MyString
+  afterhours: MyString
+  publicholidays: MyString
+
+two:
+  email: MyString
+  password: MyString
+  name: MyString
+  surname: MyString
+  street: MyString
+  city: MyString
+  country: MyString
+  institution: MyString
+  tshirtsize: 9.99
+  formalshirtsize: 9.99
+  waistsize: 9.99
+  shoesize: 9.99
+  hipsize: 9.99
+  suitjacketsize: 9.99
+  dresssize: 9.99
+  gender: MyString
+  age: 1
+  language: MyString
+  eyecolour: MyString
+  race: MyString
+  height: 9.99
+  weight: 9.99
+  haircolour: MyString
+  weekdays: MyString
+  weekends: MyString
+  afterhours: MyString
+  publicholidays: MyString
