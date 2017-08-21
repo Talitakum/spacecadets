@@ -1,0 +1,77 @@
+<h1>Listing cadets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Institution</th>
+      <th>Tshirtsize</th>
+      <th>Formalshirtsize</th>
+      <th>Waistsize</th>
+      <th>Shoesize</th>
+      <th>Hipsize</th>
+      <th>Suitjacketsize</th>
+      <th>Dresssize</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Language</th>
+      <th>Eyecolour</th>
+      <th>Race</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Haircolour</th>
+      <th>Weekdays</th>
+      <th>Weekends</th>
+      <th>Afterhours</th>
+      <th>Publicholidays</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cadets.each do |cadet| %>
+      <tr>
+        <td><%= cadet.email %></td>
+        <td><%= cadet.password %></td>
+        <td><%= cadet.name %></td>
+        <td><%= cadet.surname %></td>
+        <td><%= cadet.street %></td>
+        <td><%= cadet.city %></td>
+        <td><%= cadet.country %></td>
+        <td><%= cadet.institution %></td>
+        <td><%= cadet.tshirtsize %></td>
+        <td><%= cadet.formalshirtsize %></td>
+        <td><%= cadet.waistsize %></td>
+        <td><%= cadet.shoesize %></td>
+        <td><%= cadet.hipsize %></td>
+        <td><%= cadet.suitjacketsize %></td>
+        <td><%= cadet.dresssize %></td>
+        <td><%= cadet.gender %></td>
+        <td><%= cadet.age %></td>
+        <td><%= cadet.language %></td>
+        <td><%= cadet.eyecolour %></td>
+        <td><%= cadet.race %></td>
+        <td><%= cadet.height %></td>
+        <td><%= cadet.weight %></td>
+        <td><%= cadet.haircolour %></td>
+        <td><%= cadet.weekdays %></td>
+        <td><%= cadet.weekends %></td>
+        <td><%= cadet.afterhours %></td>
+        <td><%= cadet.publicholidays %></td>
+        <td><%= link_to 'Show', cadet %></td>
+        <td><%= link_to 'Edit', edit_cadet_path(cadet) %></td>
+        <td><%= link_to 'Destroy', cadet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cadet', new_cadet_path %>
