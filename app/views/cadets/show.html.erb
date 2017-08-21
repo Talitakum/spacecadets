@@ -1,139 +1,76 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Cadet -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Cadet %></h1>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @cadet.email %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:password) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.password %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:surname) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.surname %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:street) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.street %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:country) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.country %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:institution) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.institution %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tshirtsize) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.tshirtsize %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:formalshirtsize) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.formalshirtsize %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:waistsize) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.waistsize %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shoesize) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.shoesize %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:hipsize) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.hipsize %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:suitjacketsize) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.suitjacketsize %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:dresssize) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.dresssize %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:gender) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.gender %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:age) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.age %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:language) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.language %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:eyecolour) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.eyecolour %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:race) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.race %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:height) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.height %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.weight %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:haircolour) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.haircolour %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weekdays) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.weekdays %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weekends) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.weekends %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:afterhours) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.afterhours %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:publicholidays) %></dt>
+      <dd><pre class="prettyprint"><%= @cadet.publicholidays %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Password:</strong>
-  <%= @cadet.password %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              cadets_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_cadet_path(@cadet), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              cadet_path(@cadet),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cadet.name %>
-</p>
-
-<p>
-  <strong>Surname:</strong>
-  <%= @cadet.surname %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @cadet.street %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @cadet.city %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @cadet.country %>
-</p>
-
-<p>
-  <strong>Institution:</strong>
-  <%= @cadet.institution %>
-</p>
-
-<p>
-  <strong>Tshirtsize:</strong>
-  <%= @cadet.tshirtsize %>
-</p>
-
-<p>
-  <strong>Formalshirtsize:</strong>
-  <%= @cadet.formalshirtsize %>
-</p>
-
-<p>
-  <strong>Waistsize:</strong>
-  <%= @cadet.waistsize %>
-</p>
-
-<p>
-  <strong>Shoesize:</strong>
-  <%= @cadet.shoesize %>
-</p>
-
-<p>
-  <strong>Hipsize:</strong>
-  <%= @cadet.hipsize %>
-</p>
-
-<p>
-  <strong>Suitjacketsize:</strong>
-  <%= @cadet.suitjacketsize %>
-</p>
-
-<p>
-  <strong>Dresssize:</strong>
-  <%= @cadet.dresssize %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @cadet.gender %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @cadet.age %>
-</p>
-
-<p>
-  <strong>Language:</strong>
-  <%= @cadet.language %>
-</p>
-
-<p>
-  <strong>Eyecolour:</strong>
-  <%= @cadet.eyecolour %>
-</p>
-
-<p>
-  <strong>Race:</strong>
-  <%= @cadet.race %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @cadet.height %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @cadet.weight %>
-</p>
-
-<p>
-  <strong>Haircolour:</strong>
-  <%= @cadet.haircolour %>
-</p>
-
-<p>
-  <strong>Weekdays:</strong>
-  <%= @cadet.weekdays %>
-</p>
-
-<p>
-  <strong>Weekends:</strong>
-  <%= @cadet.weekends %>
-</p>
-
-<p>
-  <strong>Afterhours:</strong>
-  <%= @cadet.afterhours %>
-</p>
-
-<p>
-  <strong>Publicholidays:</strong>
-  <%= @cadet.publicholidays %>
-</p>
-
-<%= link_to 'Edit', edit_cadet_path(@cadet) %> |
-<%= link_to 'Back', cadets_path %>

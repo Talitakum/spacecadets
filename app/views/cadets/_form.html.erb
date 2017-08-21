@@ -1,37 +1,172 @@
-<%= simple_form_for(@cadet) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.input :name %>
-    <%= f.input :surname %>
-    <%= f.input :street %>
-    <%= f.input :city %>
-    <%= f.input :country %>
-    <%= f.input :institution %>
-    <%= f.input :tshirtsize %>
-    <%= f.input :formalshirtsize %>
-    <%= f.input :waistsize %>
-    <%= f.input :shoesize %>
-    <%= f.input :hipsize %>
-    <%= f.input :suitjacketsize %>
-    <%= f.input :dresssize %>
-    <%= f.input :gender %>
-    <%= f.input :age %>
-    <%= f.input :language %>
-    <%= f.input :eyecolour %>
-    <%= f.input :race %>
-    <%= f.input :height %>
-    <%= f.input :weight %>
-    <%= f.input :haircolour %>
-    <%= f.input :weekdays %>
-    <%= f.input :weekends %>
-    <%= f.input :afterhours %>
-    <%= f.input :publicholidays %>
+<%= form_for @cadet, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.email_field :email, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :password, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :surname, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :surname, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :street, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :street, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :country, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :institution, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :institution, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tshirtsize, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tshirtsize, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :formalshirtsize, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :formalshirtsize, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :waistsize, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :waistsize, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shoesize, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :shoesize, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :hipsize, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :hipsize, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :suitjacketsize, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :suitjacketsize, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :dresssize, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :dresssize, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :gender, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :gender, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :age, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :age, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :language, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :language, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :eyecolour, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :eyecolour, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :race, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :race, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :height, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :height, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :haircolour, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :haircolour, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weekdays, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weekdays, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weekends, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weekends, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :afterhours, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :afterhours, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :publicholidays, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :publicholidays, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  cadets_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

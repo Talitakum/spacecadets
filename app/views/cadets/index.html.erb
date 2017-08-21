@@ -1,42 +1,46 @@
-<h1>Listing cadets</h1>
-
-<table>
+<%- model_class = Cadet -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Cadet %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>Institution</th>
-      <th>Tshirtsize</th>
-      <th>Formalshirtsize</th>
-      <th>Waistsize</th>
-      <th>Shoesize</th>
-      <th>Hipsize</th>
-      <th>Suitjacketsize</th>
-      <th>Dresssize</th>
-      <th>Gender</th>
-      <th>Age</th>
-      <th>Language</th>
-      <th>Eyecolour</th>
-      <th>Race</th>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>Haircolour</th>
-      <th>Weekdays</th>
-      <th>Weekends</th>
-      <th>Afterhours</th>
-      <th>Publicholidays</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:password) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:surname) %></th>
+      <th><%= model_class.human_attribute_name(:street) %></th>
+      <th><%= model_class.human_attribute_name(:city) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:institution) %></th>
+      <th><%= model_class.human_attribute_name(:tshirtsize) %></th>
+      <th><%= model_class.human_attribute_name(:formalshirtsize) %></th>
+      <th><%= model_class.human_attribute_name(:waistsize) %></th>
+      <th><%= model_class.human_attribute_name(:shoesize) %></th>
+      <th><%= model_class.human_attribute_name(:hipsize) %></th>
+      <th><%= model_class.human_attribute_name(:suitjacketsize) %></th>
+      <th><%= model_class.human_attribute_name(:dresssize) %></th>
+      <th><%= model_class.human_attribute_name(:gender) %></th>
+      <th><%= model_class.human_attribute_name(:age) %></th>
+      <th><%= model_class.human_attribute_name(:language) %></th>
+      <th><%= model_class.human_attribute_name(:eyecolour) %></th>
+      <th><%= model_class.human_attribute_name(:race) %></th>
+      <th><%= model_class.human_attribute_name(:height) %></th>
+      <th><%= model_class.human_attribute_name(:weight) %></th>
+      <th><%= model_class.human_attribute_name(:haircolour) %></th>
+      <th><%= model_class.human_attribute_name(:weekdays) %></th>
+      <th><%= model_class.human_attribute_name(:weekends) %></th>
+      <th><%= model_class.human_attribute_name(:afterhours) %></th>
+      <th><%= model_class.human_attribute_name(:publicholidays) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @cadets.each do |cadet| %>
       <tr>
+        <td><%= cadet.id %></td>
         <td><%= cadet.email %></td>
         <td><%= cadet.password %></td>
         <td><%= cadet.name %></td>
@@ -64,14 +68,21 @@
         <td><%= cadet.weekends %></td>
         <td><%= cadet.afterhours %></td>
         <td><%= cadet.publicholidays %></td>
-        <td><%= link_to 'Show', cadet %></td>
-        <td><%= link_to 'Edit', edit_cadet_path(cadet) %></td>
-        <td><%= link_to 'Destroy', cadet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l cadet.created_at, format: :long %></td>
+        <td>
+          <%= link_to cadet_path(cadet), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to cadet_path(cadet), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Cadet', new_cadet_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_cadet_path,
+            :class => 'btn btn-primary' %>
